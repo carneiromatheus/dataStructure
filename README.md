@@ -1,6 +1,6 @@
 # Estruturas de Dados
 
-Este projeto implementa estruturas de dados comuns.
+Este projeto implementa estruturas de dados básicas em Java, incluindo implementações baseadas em array e listas encadeadas.
 
 ## Estrutura do Projeto
 
@@ -23,6 +23,8 @@ src/
                         DoublyLinkedList.java
                         CircularSinglyLinkedList.java
                         CircularDoublyLinkedList.java
+                        Queue.java
+                        Stack.java
 lib/
 ```
 
@@ -39,6 +41,8 @@ lib/
       - **`DoublyLinkedList.java`**: Implementação de uma lista duplamente ligada genérica.
       - **`CircularSinglyLinkedList.java`**: Implementação de uma lista circular simplesmente ligada genérica.
       - **`CircularDoublyLinkedList.java`**: Implementação de uma lista circular duplamente ligada genérica.
+      - **`Queue.java`**: Implementação de uma fila genérica baseada em lista duplamente ligada.
+      - **`Stack.java`**: Implementação de uma pilha genérica baseada em lista duplamente ligada.
 - **`lib/`**: Diretório reservado para dependências externas (atualmente vazio).
 
 ## Estruturas de Dados Implementadas
@@ -120,6 +124,24 @@ Uma implementação genérica de lista circular duplamente ligada com as seguint
 - Estrutura circular onde head e tail estão conectados bidirecionalmente.
 - Otimização de busca baseada na proximidade do índice ao início ou fim.
 - Gerenciamento automático dos ponteiros head e tail.
+
+#### Queue (Baseada em Lista Ligada)
+
+Uma implementação genérica de fila baseada em `DoublyLinkedList` com as seguintes funcionalidades:
+- Inserir elementos no final da fila (`enqueue`).
+- Remover e retornar o elemento no início da fila (`dequeue`).
+- Visualizar o elemento no início da fila sem removê-lo (`peek`).
+- Verificar se a fila está vazia e obter o tamanho.
+- Operações eficientes de inserção e remoção em O(1).
+
+#### Stack (Baseada em Lista Ligada)
+
+Uma implementação genérica de pilha baseada em `DoublyLinkedList` com as seguintes funcionalidades:
+- Inserir elementos no topo da pilha (`push`).
+- Remover e retornar o elemento no topo da pilha (`pop`).
+- Visualizar o elemento no topo da pilha sem removê-lo (`peek`).
+- Verificar se a pilha está vazia e obter o tamanho.
+- Operações eficientes de inserção e remoção em O(1).
 
 ## Como Executar
 
