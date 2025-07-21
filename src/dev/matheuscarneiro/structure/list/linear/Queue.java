@@ -1,4 +1,4 @@
-package dev.matheuscarneiro.structure.list;
+package dev.matheuscarneiro.structure.list.linear;
 
 import java.util.NoSuchElementException;
 

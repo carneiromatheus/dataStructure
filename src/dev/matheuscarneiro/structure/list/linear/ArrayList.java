@@ -1,4 +1,4 @@
-package dev.matheuscarneiro.structure.list;
+package dev.matheuscarneiro.structure.list.linear;
 
 public class ArrayList<T> {
   private T[] array;
