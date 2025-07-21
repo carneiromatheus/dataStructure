@@ -1,6 +1,6 @@
 # Estruturas de Dados
 
-Este projeto implementa estruturas de dados básicas em Java, incluindo uma lista dinâmica (`ArrayList`), uma fila (`Queue`) e uma pilha (`Stack`).
+Este projeto implementa estruturas de dados comuns.
 
 ## Estrutura do Projeto
 
@@ -13,23 +13,33 @@ src/
             App.java
             structure/
                 list/
-                    ArrayList.java
-                    Queue.java
-                    Stack.java
+                    linear/
+                        ArrayList.java
+                        Queue.java
+                        Stack.java
+                    linked/
+                        Node.java
+                        SinglyLinkedList.java
 lib/
 ```
 
 - **`src/`**: Contém o código-fonte do projeto.
-  - **`App.java`**: Classe principal.
-  - **`structure/list/`**: Contém as implementações das estruturas de dados.
-    - **`ArrayList.java`**: Implementação de uma lista dinâmica genérica.
-    - **`Queue.java`**: Implementação de uma fila genérica baseada em `ArrayList`.
-    - **`Stack.java`**: Implementação de uma pilha genérica baseada em `ArrayList`.
+  - **`App.java`**: Classe principal que demonstra o funcionamento básico do projeto.
+  - **`structure/list/`**: Contém as implementações das estruturas de dados organizadas por categoria.
+    - **`linear/`**: Estruturas de dados lineares baseadas em arrays.
+      - **`ArrayList.java`**: Implementação de uma lista dinâmica genérica.
+      - **`Queue.java`**: Implementação de uma fila genérica baseada em `ArrayList`.
+      - **`Stack.java`**: Implementação de uma pilha genérica baseada em `ArrayList`.
+    - **`linked/`**: Estruturas de dados baseadas em nós ligados.
+      - **`Node.java`**: Classe auxiliar que representa um nó para listas ligadas.
+      - **`SinglyLinkedList.java`**: Implementação de uma lista simplesmente ligada genérica.
 - **`lib/`**: Diretório reservado para dependências externas (atualmente vazio).
 
 ## Estruturas de Dados Implementadas
 
-### ArrayList
+### Estruturas Lineares (Baseadas em Array)
+
+#### ArrayList
 
 Uma implementação genérica de lista dinâmica com as seguintes funcionalidades:
 - Adicionar elementos no final ou em uma posição específica.
@@ -39,7 +49,7 @@ Uma implementação genérica de lista dinâmica com as seguintes funcionalidade
 - Limpar todos os elementos.
 - Verificar se está vazia e obter o tamanho.
 
-### Queue
+#### Queue
 
 Uma implementação genérica de fila baseada em `ArrayList` com as seguintes funcionalidades:
 - Inserir elementos no final da fila (`enqueue`).
@@ -47,13 +57,30 @@ Uma implementação genérica de fila baseada em `ArrayList` com as seguintes fu
 - Visualizar o elemento no início da fila sem removê-lo (`peek`).
 - Verificar se a fila está vazia e obter o tamanho.
 
-### Stack
+#### Stack
 
 Uma implementação genérica de pilha baseada em `ArrayList` com as seguintes funcionalidades:
 - Inserir elementos no topo da pilha (`push`).
 - Remover e retornar o elemento no topo da pilha (`pop`).
 - Visualizar o elemento no topo da pilha sem removê-lo (`peek`).
 - Verificar se a pilha está vazia e obter o tamanho.
+
+### Estruturas Ligadas (Baseadas em Nós)
+
+#### Node
+
+Classe auxiliar que representa um nó individual para estruturas de dados ligadas:
+- Armazena dados genéricos e referência para o próximo nó.
+- Validação para garantir que os dados não sejam nulos.
+
+#### SinglyLinkedList
+
+Uma implementação genérica de lista simplesmente ligada com as seguintes funcionalidades:
+- Adicionar elementos no início (`addFirst`), final (`addLast`) ou em posição específica (`add`).
+- Remover elementos do início (`removeFirst`), final (`removeLast`) ou por índice (`remove`).
+- Obter elementos por índice (`get`).
+- Verificar se está vazia e obter o tamanho.
+- Gerenciamento automático dos ponteiros head e tail.
 
 ## Como Executar
 
