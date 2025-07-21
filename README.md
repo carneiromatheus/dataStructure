@@ -20,6 +20,7 @@ src/
                     linked/
                         Node.java
                         SinglyLinkedList.java
+                        DoublyLinkedList.java
 lib/
 ```
 
@@ -33,6 +34,7 @@ lib/
     - **`linked/`**: Estruturas de dados baseadas em nós ligados.
       - **`Node.java`**: Classe auxiliar que representa um nó para listas ligadas.
       - **`SinglyLinkedList.java`**: Implementação de uma lista simplesmente ligada genérica.
+      - **`DoublyLinkedList.java`**: Implementação de uma lista duplamente ligada genérica.
 - **`lib/`**: Diretório reservado para dependências externas (atualmente vazio).
 
 ## Estruturas de Dados Implementadas
@@ -70,8 +72,9 @@ Uma implementação genérica de pilha baseada em `ArrayList` com as seguintes f
 #### Node
 
 Classe auxiliar que representa um nó individual para estruturas de dados ligadas:
-- Armazena dados genéricos e referência para o próximo nó.
+- Armazena dados genéricos e referências para o próximo e anterior nó (prev/next).
 - Validação para garantir que os dados não sejam nulos.
+- Suporte tanto para listas simplesmente quanto duplamente ligadas.
 
 #### SinglyLinkedList
 
@@ -80,6 +83,16 @@ Uma implementação genérica de lista simplesmente ligada com as seguintes func
 - Remover elementos do início (`removeFirst`), final (`removeLast`) ou por índice (`remove`).
 - Obter elementos por índice (`get`).
 - Verificar se está vazia e obter o tamanho.
+- Gerenciamento automático dos ponteiros head e tail.
+
+#### DoublyLinkedList
+
+Uma implementação genérica de lista duplamente ligada com as seguintes funcionalidades:
+- Adicionar elementos no início (`addFirst`), final (`addLast`) ou em posição específica (`add`).
+- Remover elementos do início (`removeFirst`), final (`removeLast`) ou por índice (`remove`).
+- Obter elementos por índice (`get`).
+- Verificar se está vazia e obter o tamanho.
+- Navegação bidirecional com ponteiros anterior e próximo.
 - Gerenciamento automático dos ponteiros head e tail.
 
 ## Como Executar
