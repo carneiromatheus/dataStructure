@@ -34,7 +34,7 @@ public class SinglyLinkedList<T> {
   }
 
   public void add(int index, T data) {
-    checkIndexBounds(index);
+    checkIndexForAdd(index);
 
     if (index == 0) {
       addFirst(data);
@@ -69,80 +69,67 @@ public class SinglyLinkedList<T> {
   }
 
   public T get(int index) {
-    checkIndexBounds(index);
-
-    Node<T> current = this.head;
-
-    for (int i = 0; i < index; i++) {
-      current = current.getNext();
-    }
-
-    return current.getData();
+    return getNode(index).getData();
   }
 
-  public void removeFirst() {
+  public T removeFirst() {
     checkIfEmpty();
-
+    T removedData = this.head.getData();
     this.head = this.head.getNext();
     this.size--;
 
     if (this.isEmpty()) {
       this.tail = null;
     }
+    return removedData;
   }
 
   public T remove(int index) {
     checkIndexBounds(index);
 
     if (index == 0) {
-      T removedData = head.getData();
-      removeFirst();
-      return removedData;
+      return removeFirst();
+    }
+
+    if (index == this.size - 1) {
+      return removeLast();
     }
 
     Node<T> previousNode = getNode(index - 1);
     Node<T> nodeToRemove = previousNode.getNext();
 
-    if (nodeToRemove == tail) {
-      this.tail = previousNode;
-    }
-
     previousNode.setNext(nodeToRemove.getNext());
-
-    size--;
+    this.size--;
 
     return nodeToRemove.getData();
   }
 
-  public void removeLast() {
+  public T removeLast() {
     checkIfEmpty();
+    T removedData = this.tail.getData();
 
     if (this.head == this.tail) {
       this.head = null;
       this.tail = null;
     } else {
-      var current = this.head;
-
+      Node<T> current = this.head;
       while (current.getNext() != this.tail) {
         current = current.getNext();
       }
-
       current.setNext(null);
       this.tail = current;
     }
 
     this.size--;
+    return removedData;
   }
 
   private Node<T> getNode(int index) {
     checkIndexBounds(index);
-
     Node<T> current = this.head;
-
     for (int i = 0; i < index; i++) {
       current = current.getNext();
     }
-
     return current;
   }
 
@@ -155,6 +142,12 @@ public class SinglyLinkedList<T> {
   private void checkIndexBounds(int index) {
     if (index < 0 || index >= this.size) {
       throw new IndexOutOfBoundsException("Index out of bounds");
+    }
+  }
+
+  private void checkIndexForAdd(int index) {
+    if (index < 0 || index > this.size) {
+      throw new IndexOutOfBoundsException("Index for add operation out of bounds");
     }
   }
 }
